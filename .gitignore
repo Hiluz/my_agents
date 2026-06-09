@@ -1,1 +1,4 @@
 .DS_Store
+
+# סודות — לא נכנס ל-git (השתמש ב-.env.example כתבנית)
+.env
