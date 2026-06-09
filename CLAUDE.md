@@ -38,7 +38,7 @@
 
 - `Content/` — מאמרי גלם (קלט ליעל). `Output/` — תוצרים מוגמרים (`.md` + `.html`).
 - `yael/` — מדריך הסגנון (`style-guide.md`) ותיקיית `reference/` של יעל.
-- `yuval/` — תיקיות העבודה של יובל: `reference/` (תמונות השראה לסגנון) ו-`outputs/` (תמונות מוגמרות).
+- `yuval/` — תיקיות העבודה של יובל: `style-guide.md` (השפה הגרפית — סגנון Binary Code רטרו-פיקסל), `reference/` (תמונות השראה לסגנון) ו-`outputs/` (תמונות מוגמרות).
 - `.env` — מפתחות API (לא ב-git; ראה `.env.example` כתבנית). מכיל את `OPENAI_API_KEY` הדרוש ל-`gpt-image-gen`.
 
 ## סטטוס
