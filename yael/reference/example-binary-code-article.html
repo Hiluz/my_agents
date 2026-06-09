@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>איך סוף סוף התחלתי לבצע דברים</title>
+  <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=Libre+Baskerville:wght@400;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bc-black:#000000; --bc-ink:#1A1A1A; --bc-pink:#E84477;
+      --bc-teal:#3BBFB8; --bc-yellow:#F5C800; --bc-yellow-soft:#F5E070;
+      --bc-cream:#F5F0D0; --bc-gray:#C8C8C8; --bc-gray-shadow:#888888;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      background: var(--bc-black);
+      font-family: 'Libre Baskerville', serif;
+      overflow-x: hidden;
+      color: var(--bc-ink);
+    }
+
+    /* ---------- HERO SLIDE ---------- */
+    .hero {
+      min-height: 100vh;
+      display: flex; flex-direction: column;
+      align-items: center; justify-content: center;
+      padding: clamp(40px, 6vw, 80px);
+      gap: clamp(28px, 4vw, 50px);
+      position: relative;
+    }
+    .deco { position: absolute; z-index: 0; }
+    .deco-pink {
+      top: -60px; inset-inline-end: -60px;
+      width: clamp(140px, 16vw, 260px); aspect-ratio: 1;
+      background: var(--bc-pink); border-radius: 0 0 0 100%;
+      border: 5px solid var(--bc-ink);
+    }
+    .deco-teal {
+      bottom: -70px; inset-inline-start: -70px;
+      width: clamp(140px, 16vw, 240px); aspect-ratio: 1;
+      border: 14px solid var(--bc-teal); border-radius: 50%;
+      border-inline-end-color: transparent; border-top-color: transparent;
+    }
+    .deco-yellow {
+      top: 40px; inset-inline-start: -30px;
+      width: clamp(90px, 10vw, 150px); aspect-ratio: 1;
+      border: 12px solid var(--bc-yellow); border-radius: 50%;
+      border-bottom-color: transparent; border-inline-start-color: transparent;
+    }
+
+    .monitor {
+      background: var(--bc-teal); border: 4px solid var(--bc-ink);
+      border-radius: 16px; padding: 14px 14px 0;
+      max-width: 760px; width: 100%; position: relative; z-index: 1;
+      box-shadow: 8px 8px 0 var(--bc-gray-shadow);
+    }
+    .screen {
+      background: var(--bc-cream); border: 3px solid var(--bc-ink);
+      border-radius: 8px; padding: clamp(28px,5vw,52px) clamp(20px,4vw,40px);
+      text-align: center;
+    }
+    .screen-label {
+      font-family: 'Press Start 2P', monospace;
+      font-size: clamp(11px, 1.6vw, 16px); letter-spacing: 2px;
+      color: var(--bc-pink); margin-bottom: 22px;
+    }
+    .screen-title {
+      font-family: 'Press Start 2P', monospace;
+      font-size: clamp(16px, 3.5vw, 36px); color: var(--bc-black);
+      line-height: 1.8;
+    }
+    .monitor-dots { display: flex; gap: 8px; justify-content: center; padding: 12px 0; }
+    .dot-sm { width: 12px; height: 12px; border-radius: 50%; background: var(--bc-yellow); border: 2px solid var(--bc-ink); }
+    .dot-red { width: 12px; height: 12px; border-radius: 50%; background: var(--bc-pink); border: 2px solid var(--bc-ink); }
+    .monitor-neck {
+      width: 64px; height: 26px; background: var(--bc-teal);
+      border: 4px solid var(--bc-ink); border-top: none;
+      margin: 0 auto; position: relative; z-index: 1;
+    }
+    .monitor-base {
+      width: 160px; height: 16px; background: var(--bc-teal);
+      border: 4px solid var(--bc-ink); border-radius: 4px;
+      margin: 0 auto; position: relative; z-index: 1;
+    }
+
+    /* ---------- ARTICLE BODY ---------- */
+    .article {
+      min-height: 100vh;
+      background: var(--bc-yellow);
+      display: flex; align-items: center; justify-content: center;
+      padding: clamp(40px, 6vw, 80px);
+      position: relative;
+    }
+    .band {
+      position: absolute; top: 0; inset-inline: 0; height: 22%;
+      background: var(--bc-black); z-index: 0;
+    }
+    .content-box {
+      background: var(--bc-cream); border: 4px solid var(--bc-ink);
+      border-radius: 4px; box-shadow: 10px 10px 0 var(--bc-ink);
+      padding: clamp(30px,5vw,60px) clamp(24px,5vw,64px);
+      max-width: 760px; width: 100%; position: relative; z-index: 1;
+    }
+    .num-circle {
+      width: clamp(74px, 12vw, 110px); aspect-ratio: 1;
+      background: var(--bc-pink); border-radius: 50%; border: 5px solid var(--bc-black);
+      display: grid; place-items: center;
+      margin: 0 auto clamp(24px, 4vw, 40px);
+    }
+    .num-circle span {
+      font-family: 'Press Start 2P', monospace;
+      font-size: clamp(26px, 5vw, 48px); color: var(--bc-black);
+    }
+    .content-box p {
+      font-size: clamp(15px, 1.8vw, 22px);
+      line-height: 1.8; margin-bottom: clamp(18px, 2.5vw, 28px);
+      color: var(--bc-ink);
+    }
+    .content-box p:last-child { margin-bottom: 0; }
+    .content-box .lead {
+      font-weight: 700;
+    }
+    .kbd {
+      font-family: 'Press Start 2P', monospace;
+      font-size: 0.7em; background: var(--bc-yellow-soft);
+      border: 2px solid var(--bc-ink); border-radius: 2px;
+      padding: 2px 6px; white-space: nowrap;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ===== HERO ===== -->
+  <section class="hero">
+    <div class="deco deco-pink"></div>
+    <div class="deco deco-yellow"></div>
+    <div class="deco deco-teal"></div>
+
+    <div class="monitor">
+      <div class="screen">
+        <div class="screen-label">// PRODUCTIVITY.EXE</div>
+        <h1 class="screen-title">איך סוף סוף<br>התחלתי לבצע דברים</h1>
+      </div>
+      <div class="monitor-dots">
+        <span class="dot-sm"></span><span class="dot-red"></span>
+      </div>
+    </div>
+    <div class="monitor-neck"></div>
+    <div class="monitor-base"></div>
+  </section>
+
+  <!-- ===== ARTICLE ===== -->
+  <section class="article">
+    <div class="band"></div>
+    <article class="content-box">
+      <div class="num-circle"><span>1</span></div>
+      <p class="lead">פעם נאבקתי עם ריכוז. בכל פעם שהתיישבתי לעבוד, המחשבות שלי נדדו לכל כיוון. ואז חבר סיפר לי על שיטת הפומודורו — ואני אומר את זה בכנות: זה שינה לי הכול.</p>
+      <p>הרעיון פשוט. עובדים <span class="kbd">25 דק'</span> ואז לוקחים הפסקה של <span class="kbd">5 דק'</span>. אחרי ארבעה סבבים, לוקחים הפסקה ארוכה יותר — 15 עד 30 דקות. זהו. לא צריך אפליקציה מתוחכמת, אם כי אני אישית משתמש בטיימר בתוך Notion כדי לעקוב.</p>
+      <p>מה שהכי הפתיע אותי היה עד כמה ההפסקות הקצרות באמת עזרו. תמיד חשבתי שעצירה תשבור לי את הרצף. במקום זה, הידיעה שהפסקה מתקרבת דווקא הקלה עליי לדחוף קדימה בחלקים הקשים.</p>
+    </article>
+  </section>
+
+</body>
+</html>
